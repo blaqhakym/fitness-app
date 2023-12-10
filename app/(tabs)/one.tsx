@@ -1,10 +1,10 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-export default function two() {
+export default function Page() {
   return (
     <View>
-      <Text>two</Text>
+      <Text>Tab one</Text>
     </View>
   )
 }
