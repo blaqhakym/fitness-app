@@ -1,23 +1,27 @@
-import { View, Text, Button } from 'react-native'
+import { View, Text, Button, LogBox } from 'react-native'
 import React from 'react'
 import { Link, Stack } from 'expo-router'
 
 export default function _layout() {
+  LogBox.ignoreLogs(["Warning: Failed prop type"]);
+
   return (
-    <Stack>
+    <Stack
+      screenOptions={{
+        headerShown: false,
+      }}>
       <Stack.Screen
-        name='index'
-        options={
-          {
-            title: 'Home',
-            headerRight: () => (
-              <Link href='/login' asChild>
-                <Button title='Login'/>
-              </Link>
-            )
-          }
-      }
+        name="exercises"
+        options={{
+          presentation: "fullScreenModal",
+        }}
+      />
+      <Stack.Screen
+        name="exerciseDetail"
+        options={{
+          presentation: "modal",
+        }}
       />
     </Stack>
-  )
-}
+  );
+} 
